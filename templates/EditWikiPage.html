@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="/static/main.css"/>
+		<title>Edit Wiki</title>
+	</head>
+	
+	<body>
+		<span><em>Hello, {{username}}!</em></span>
+		<a href='/logout' class='account'>logout</a>
+		<form method="post">
+			<textarea class="editwiki" name="content">{{content}}</textarea>
+			
+			<input type="submit" value="Save">
+		</form>
+	</body>
+</html>

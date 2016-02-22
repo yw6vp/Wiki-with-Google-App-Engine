@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>History</title>
+	</head>
+	
+	<body>
+		<a href={{'/_edit'+title}} class="link">edit</a>
+		<a href={{title}} class="link">view</a>
+		<span><em>Hello, {{username}}!</em></span>
+		<a href='/logout' class='account'>logout</a>
+		<table>
+			{% for wiki_h in history %}
+				<tr>
+					<td>{{wiki_h.created}}</td>
+					<td>{{wiki_h.content}}</td>
+					<td><a href={{title+('?v=%d' % wiki_h.version)}}>view</a></td>
+					<td><a href={{'/_edit'+title}}>edit</a></td>
+				</tr>
+			{% endfor %}
+		<table>
+	</body>
+</html>

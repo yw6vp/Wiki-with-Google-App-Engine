@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="/static/main.css" />
+		
+		<title>Tiny Wiki</title>
+	</head>
+	
+	<body>
+		{% if not username %}
+			<a href='/signup' class="account">signup</a>
+			<a href='/login' class="account">login</a>
+		{% else %}
+			<a href={{'/_edit'+title}} class="link">edit</a>
+			<a href={{'/_history'+title}} class="link">history</a>
+			<span><em>Hello, {{username}}!</em></span>
+			<a href='/logout' class='account'>logout</a>
+		{% endif %}
+		<hr>
+		<div class="content">
+			{{content|safe}}
+		</div>
+	</body>
+</html>
